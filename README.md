@@ -2,7 +2,7 @@
 
 [Heroku Demo Link](http://url-description-seo.herokuapp.com/)
 
-A demo of nesting that follows these guidelines:
+A demo of URLs that follows these guidelines:
 
 1. **Numeric IDs** are used to identify resources
 2. **Descriptions** are appended to the path for Search Engine Optimization
