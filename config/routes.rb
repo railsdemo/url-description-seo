@@ -1,8 +1,9 @@
 UrlDescriptionSeo::Application.routes.draw do
   
-  resources :locations, except: :show
-  get 'locations/:id(/:description)', to: "locations#show"
-
   root :to => "pages#home"
 
+  resources :locations, except: [:show, :update, :destroy]
+  get 'locations/:id(/:description)', to: "locations#show", as: 'location'
+  resources :locations, only: [:update, :destroy]
+  
 end
