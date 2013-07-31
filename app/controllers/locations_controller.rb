@@ -8,8 +8,8 @@ class LocationsController < ApplicationController
 
   # GET
   def show
-    if @location.description_url != params[:description]
-        redirect_to location_path(@location.id, @location.description_url)
+    if params[:id] != @location.to_param
+      redirect_to location_path(@location)
     end
   end
 

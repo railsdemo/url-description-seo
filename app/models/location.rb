@@ -10,4 +10,8 @@ class Location < ActiveRecord::Base
   	description_url.gsub(' ','_')
   end
 
+  def to_param
+    	"#{id}/#{description_url}"
+  end
+
 end

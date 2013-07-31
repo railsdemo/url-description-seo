@@ -18,14 +18,16 @@ A mix of resources listed here:
 Note: There is some slightly strange route naming behavior between Rails 3 and Rails 4 as discussed in this [Github Issue](https://github.com/rails/rails/issues/11602).
 
 Rake Routes:
-
-           Prefix Verb   URI Pattern                             Controller#Action
-             root GET    /                                       pages#home
-        locations GET    /locations(.:format)                    locations#index
-                  POST   /locations(.:format)                    locations#create
-     new_location GET    /locations/new(.:format)                locations#new
-    edit_location GET    /locations/:id/edit(.:format)           locations#edit
-         location GET    /locations/:id(/:description)(.:format) locations#show
-                  PATCH  /locations/:id(.:format)                locations#update
-                  PUT    /locations/:id(.:format)                locations#update
-                  DELETE /locations/:id(.:format)                locations#destroy
+```
+       Prefix Verb   URI Pattern                   Controller#Action
+         root GET    /                             pages#home
+    locations GET    /locations(.:format)          locations#index
+              POST   /locations(.:format)          locations#create
+ new_location GET    /locations/new(.:format)      locations#new
+edit_location GET    /locations/:id/edit(.:format) locations#edit {:id=>/[^\/]+\/[^\/]+/}
+     location GET    /locations/:id(.:format)      locations#show {:id=>/[^\/]+\/[^\/]+/}
+              PATCH  /locations/:id(.:format)      locations#update {:id=>/[^\/]+\/[^\/]+/}
+              PUT    /locations/:id(.:format)      locations#update {:id=>/[^\/]+\/[^\/]+/}
+              DELETE /locations/:id(.:format)      locations#destroy {:id=>/[^\/]+\/[^\/]+/}
+              GET    /locations/:id(.:format)      locations#show
+```
